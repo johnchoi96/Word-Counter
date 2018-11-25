@@ -24,7 +24,7 @@ else
   isValid=false
 fi
 
-if [ "$isValid" = false ]
+if [ "$isValid" == false ]
 then
   echo "usage: ./run word or ./run char"
   exit 2
@@ -40,7 +40,7 @@ echo
 echo
 echo
 
-if [ "$isWord" = true ]
+if [ "$isWord" == true ]
 then
   ./counter word
 else
