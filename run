@@ -36,6 +36,10 @@ rm $inputfile
 touch $inputfile
 vim $inputfile
 
+echo
+echo
+echo
+
 if [ "$isWord" = true ]
 then
   ./counter word
