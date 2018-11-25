@@ -1,0 +1,36 @@
+#!/bin/bash
+
+if [ $# != 1 ]
+then
+  echo "usage: ./run word or ./run char"
+  exit 1
+fi
+isValid=true
+isWord=false
+if [ "$1" == "word" ]
+then
+  isWord=true
+elif [ "$1" == "char" ]
+then
+  isWord=false
+else
+  isValid=false
+fi
+
+if [ "$isValid" = false ]
+then
+  echo "usage: ./run word or ./run char"
+  exit 2
+fi
+
+rm input.txt
+touch input.txt
+vim input.txt
+
+if [ "$isWord" = true ]
+then
+  ./counter word
+else
+  ./counter char
+fi
+exit 0
