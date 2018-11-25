@@ -1,10 +1,17 @@
 #!/bin/bash
 
+inputfile="./input.txt"
+if [ ! -f "$inputfile" ]
+then
+	touch input.txt
+fi
+
 if [ $# != 1 ]
 then
   echo "usage: ./run word or ./run char"
   exit 1
 fi
+
 isValid=true
 isWord=false
 if [ "$1" == "word" ]
@@ -23,9 +30,11 @@ then
   exit 2
 fi
 
-rm input.txt
-touch input.txt
-vim input.txt
+make clean
+make
+rm $inputfile
+touch $inputfile
+vim $inputfile
 
 if [ "$isWord" = true ]
 then
